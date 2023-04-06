@@ -199,21 +199,20 @@ ul.navbar-nav {
     }
     .navbar-nav {
         display: flex;
-        width: 100%;
+        width: 90%;
         height: auto;
         justify-content: space-around;
     }
     .navbar-nav a {
-        float: left;
         font-size: 0.8em;
         padding: 1em 0.5em;
     }
     .navbar-nav .icon {
         width: 2em;
-        height: 2em;
+        height: 1.5em;
     }
     .navbar-nav img {
-        margin-right: .5em;
+        margin-right: .4em;
     }
     .navbar-footer {
         display: none;
@@ -222,6 +221,38 @@ ul.navbar-nav {
 
 @media screen and (max-width: 500px) {
     /* Phone (Large)*/
+    .navbar {
+        bottom: 0;
+        width: 100%;
+        height: 65px;
+        padding: 0.1em;
+        position: fixed;
+        margin: 0;
+        border-top: 1px solid var(--background-color);
+    }
+    .navbar-brand {
+        display: none;
+    }
+    .navbar-nav {
+        display: flex;
+        width: 99%;
+        height: 60px;
+        justify-content: space-around;
+    }
+    .navbar-nav a {
+        font-size:x-small;
+        padding: 0.4em 0.4em;
+    }
+    .navbar-nav .icon {
+        width: 2.5em;
+        height: 2.6em;
+    }
+    .navbar-nav img {
+        margin-right: .4em;
+    }
+    .navbar-footer {
+        display: none;
+    }
     .navbar-nav {
         position: relative;
         bottom: 0;
@@ -231,6 +262,7 @@ ul.navbar-nav {
     .navbar-nav a {
         flex-direction: column;
         align-items: center;
+        font-size: 55%;
     }
 }
 
@@ -358,7 +390,13 @@ main h1 {
 }
 
 @media screen and (max-width: 500px) {
-    /* Phone (Large)*/
+    /* Phone (large) */
+    main header button {
+        padding: 0em 1.2em;
+    }
+    main header {
+        padding: 0.5em 0.7em;
+    }
 }
 
 @media screen and (max-width: 320px) {
@@ -543,6 +581,7 @@ main section[role="chart"].efficiency {
 }
 </style>
 <body>
+<center>
     <nav class="navbar">
         <a class="navbar-brand" href="#">
             <span class="name" style="font-size: 200%;">Crypto <b style=" color: #5469d4;">Solutions</b></span>
@@ -566,6 +605,7 @@ main section[role="chart"].efficiency {
         </ul>
 
     </nav>
+</center>
     <main>
         <header>
             <section role="search">
