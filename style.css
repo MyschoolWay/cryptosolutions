@@ -1,0 +1,250 @@
+body {
+    margin: 0;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Nasalization&display=swap');
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fff;
+  height: 60px;
+  padding: 0 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  font-family: 'Nasalization', sans-serif;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  position: relative;
+}
+
+nav ul li a {
+  display: inline-block;
+  padding: 0 10px;
+  line-height: 60px;
+  color: #313131;
+  font-weight: bold;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+nav ul li a::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #e97f1c;
+  transform: scaleX(0);
+  transform-origin: bottom right;
+  transition: transform 0.3s ease;
+}
+
+nav ul li a:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+nav .logo img {
+  height: 40px;
+  margin-top: 5px;
+}
+
+@media screen and (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    z-index: 1;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    display: none;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+  
+  nav ul.show {
+    display: flex;
+  }
+  
+  nav ul li {
+    width: 100%;
+    margin: 0;
+  }
+  
+  nav ul li a {
+    line-height: 40px;
+    font-size: 18px;
+    padding: 10px 0;
+  }
+  
+  nav .menu-toggle {
+    display: block;
+    font-size: 20px;
+    color: #dd0505;
+    text-decoration: none;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+  }
+}
+
+.right {
+    float: right;
+    width: 50%;
+}
+
+.left {
+   float: left;
+   width: 50%;
+}
+
+@media only screen and (max-width:700px) {
+  .right {
+    width: 95%;
+}
+
+.left {
+  width: 0px;
+}
+  .fav {
+  width: 35%;
+   float: left;
+  margin-top: 1px;
+} 
+
+}
+
+.button-5 {
+  align-items: center;
+  background-clip: padding-box;
+  background-color: #fa6400;
+  border: 1px solid transparent;
+  border-radius: .35rem;
+  box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-flex;
+  font-family: system-ui,-apple-system,system-ui,"Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  justify-content: center;
+  line-height: 1.25;
+  margin: 0;
+  min-height: 3rem;
+  padding: calc(.875rem - 1px) calc(1.5rem - 1px);
+  position: relative;
+  text-decoration: none;
+  transition: all 250ms;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: baseline;
+  width: 200px;
+}
+
+.button-5:hover,
+.button-5:focus {
+  background-color: #fb8332;
+  box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+}
+
+.button-5:hover {
+  transform: translateY(-1px);
+}
+
+.button-5:active {
+  background-color: #c85000;
+  box-shadow: rgba(0, 0, 0, .06) 0 2px 4px;
+  transform: translateY(0);
+}
+
+.fav {
+  width: 35%;
+  float: right;
+  margin-right: 22%;
+  margin-top: 1px;
+}
+
+.scrollable-container {
+  width: 100%;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  white-space: nowrap;
+  -webkit-overflow-scrolling: touch; /* For smoother scrolling on iOS devices */
+}
+
+.scrollable-box {
+  width: 200px;
+  height: 200px;
+  display: inline-block;
+  margin-right: 20px;
+  border-radius: 30px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.orange {
+  background-color: #ff8c00;
+}
+
+.coral {
+  background-color: #ff7f50;
+}
+
+.tomato {
+  background-color: #ff6347;
+}
+
+.crimson {
+  background-color: #dc143c;
+}
+
+.red {
+  background-color: #ff0000;
+}
+
+
+
+#footer {
+  background-color: white;
+  padding: 20px;
+  text-align: center;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  margin-bottom: 0;
+}
+
+#footer a {
+  color: #333;
+  text-decoration: none;
+  margin-right: 10px;
+}
+
+#footer a:hover {
+  color: #c45500;
+}
+
+.social-icons a {
+  display: inline-block;
+  margin-right: 10px;
+  color: #333;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+.social-icons a:hover {
+  color: #c45500;
+}

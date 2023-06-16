@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+body {
+    margin: 0;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Nasalization&display=swap');
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fff;
+  height: 60px;
+  padding: 0 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  font-family: 'Nasalization', sans-serif;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  position: relative;
+}
+
+nav ul li a {
+  display: inline-block;
+  padding: 0 10px;
+  line-height: 60px;
+  color: #313131;
+  font-weight: bold;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+nav ul li a::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #e97f1c;
+  transform: scaleX(0);
+  transform-origin: bottom right;
+  transition: transform 0.3s ease;
+}
+
+nav ul li a:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+nav .logo img {
+  height: 40px;
+  margin-top: 5px;
+}
+
+@media screen and (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    z-index: 1;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    display: none;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+  
+  nav ul.show {
+    display: flex;
+  }
+  
+  nav ul li {
+    width: 100%;
+    margin: 0;
+  }
+  
+  nav ul li a {
+    line-height: 40px;
+    font-size: 18px;
+    padding: 10px 0;
+  }
+  
+  nav .menu-toggle {
+    display: block;
+    font-size: 20px;
+    color: #dd0505;
+    text-decoration: none;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+  }
+}
+
+.card {
+  background-color: #fff;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  padding: 20px;
+  margin-right: 5%;
+  width: 300px;
+  float: right;
+}
+
+.card h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.card p {
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.card a {
+  display: block;
+  background-color: #e97f1c;
+  color: #fff;
+  text-align: center;
+  padding: 10px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+
+.leftside {
+    float: left;
+    width: 60%;
+}
+@media only screen and (max-width:800px) {
+.leftside {
+    width: 100%;
+}
+
+
+.card {
+  background-color: #fff;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  width: 90%;
+  margin-right: 0;
+}
+
+}
+
+h1 {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin-left: 10px;
+ }
+
+p {
+    margin-left: 10px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+h2 {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="index.html" style="color: black;">
+         <div class="logo">
+             <img src="Logo-removebg-preview.png" alt="Your Logo">
+             <h3 style="float: right;">Capybara.ga</h3>
+           </div>
+        </a>
+         <ul>
+           <li><a href="FAQ.html">FAQ</a></li>
+           <li><a href="contactus.html">Contact us</a></li>
+         </ul>
+       </nav>
+ <div class="leftside">
+    <br>
+    <h1>Welcome to Capybara.ga!</h1>
+    <p>
+     We are an e-commerce website based in Tbilisi, Georgia, founded by David Tsereteli. Our goal is to provide our customers with a one-stop-shop for everything they need, from clothing and accessories to home goods and electronics.
+     <br>
+     <br>
+     Our founder, David Tsereteli, had a passion for entrepreneurship and saw an opportunity to bring a new level of convenience to the online shopping experience. He envisioned a platform where customers could find everything they need in one place, without having to navigate through multiple websites or stores.
+     <br>
+     <br>
+     At Capybara.ga, we pride ourselves on offering a wide variety of high-quality products at competitive prices. Whether you're looking for the latest fashion trends or the newest tech gadgets, we've got you covered. We work with top brands and suppliers to ensure that our customers always have access to the latest and greatest products on the market.
+     <br>
+     <br>
+     Our team is made up of passionate individuals who are dedicated to providing the best possible shopping experience for our customers. From our friendly customer service team to our skilled warehouse staff, everyone at Capybara.ga is committed to ensuring that every order is processed quickly and accurately.
+     <br>
+     <br>
+     We believe in the importance of giving back to our community, which is why we are committed to supporting local charities and causes. Through our charitable giving program, we donate a portion of our profits to organizations that are making a positive impact in the lives of others.
+     <br>
+     <br>
+     Thank you for choosing Capybara.ga as your go-to online shopping destination. We look forward to serving you and providing you with an exceptional shopping experience!
+    <br>
+    If you have any questions or comments, please don't hesitate to <a href="contactus.html">contact us on this page.</a>
+     </p>
+ </div>
+ <br>
+ <br>
+ <div class="card">
+    <h2>Capybara on social media</h2>
+    <p>Instagram </p>
+    <a href="#" style="font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;">Store_Capybara.ga</a>
+</div>
+
+  
+</body>
+</html>

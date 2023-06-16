@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn01.jotfor.ms/static/prototype.forms.js?3.3.42766" type="text/javascript"></script>
+<script src="https://cdn02.jotfor.ms/static/jotform.forms.js?3.3.42766" type="text/javascript"></script>
+<script src="https://cdn03.jotfor.ms/js/payments/paypalcomplete.js?v=3.3.42766" type="text/javascript"></script>
+<script src="https://cdn01.jotfor.ms/js/payments/paymentUtils.js?v=3.3.42766" type="text/javascript"></script>
+<script src="https://cdn02.jotfor.ms/js/libraries/promise-polyfill.js"></script>
+<script src="https://cdn03.jotfor.ms/js/payments/payment_form_embedded.js?v=3.3.42766" type="text/javascript"></script>
+<script src="https://cdn01.jotfor.ms/js/payments/validategateways.js?v=3.3.42766" type="text/javascript"></script>
+<script type="text/javascript">	JotForm.newDefaultTheme = true;
+	JotForm.extendsNewTheme = false;
+	JotForm.singleProduct = false;
+	JotForm.newPaymentUIForNewCreatedForms = true;
+	JotForm.newPaymentUI = true;
+
+   JotForm.setConditions([{"action":[{"id":"action_1594379423339","visibility":"Show","isError":false,"field":"54"}],"id":"1594379434969","index":"2","link":"Any","priority":"2","terms":[{"id":"term_1594379423339","field":"56","operator":"equals","value":"Yes","isError":false}],"type":"field"},{"action":[{"id":"action_1594379392623","visibility":"Show","isError":false,"field":"55"}],"id":"1594379411599","index":"3","link":"Any","priority":"3","terms":[{"id":"term_1594379392623","field":"56","operator":"equals","value":"Yes","isError":false}],"type":"field"},{"action":[{"id":"action_1594378974017","visibility":"Hide","isError":false,"field":"52"}],"id":"1594378987259","index":"4","link":"Any","priority":"4","terms":[{"id":"term_1594378974017","field":"51","operator":"equals","value":"Yes","isError":false}],"type":"field"},{"action":[{"id":"action_0_1594379880244","visibility":"Hide","isError":false,"field":"52"}],"id":"1594378967530","index":"5","link":"Any","priority":"5","terms":[{"id":"term_0_1594379880244","field":"51","operator":"isEmpty","value":"","isError":false}],"type":"field"}]);	JotForm.clearFieldOnHide="disable";
+	JotForm.submitError="jumpToFirstError";
+
+	JotForm.init(function(){
+	/*INIT-START*/
+      productID = {"0":"input_42_1000","1":"input_42_1001","2":"input_42_1002","3":"input_42_1004","4":"input_42_1005","5":"input_42_1003"};
+      paymentType = "product";
+      JotForm.setCurrencyFormat('USD',true, 'point');
+      JotForm.totalCounter({"input_42_1000":{"price":"10"},"input_42_1001":{"price":"10"},"input_42_1002":{"price":"10"},"input_42_1004":{"price":"10","quantityField":"input_42_quantity_1004_0","custom_1":"input_42_custom_1004_1"},"input_42_1005":{"price":"14","quantityField":"input_42_quantity_1005_0","custom_1":"input_42_custom_1005_1"},"input_42_1003":{"price":"10","quantityField":"input_42_quantity_1003_0","custom_1":"input_42_custom_1003_1"}});
+      $$('.form-product-custom_quantity').each(function(el, i){el.observe('blur', function(){isNaN(this.value) || this.value < 1 ? this.value = '0' : this.value = parseInt(this.value)})});
+      $$('.form-product-custom_quantity').each(function(el, i){el.observe('focus', function(){this.value == 0 ? this.value = '' : this.value})});
+      JotForm.handleProductLightbox();
+      JotForm.paymentProperties = {"styleColor":"gold","styleShape":"rect","styleSize":"medium","styleLabel":"checkout","styleLayout":"vertical","payLaterEnabled":"No","paymentFormProperties":{"products":[{"cid":"2001","connectedCategories":"[\"2001\"]","connectedProducts":"[]","corder":"0","description":"This style you'll want to wear every day is comfortable and durable for everyday use.","fitImageToCanvas":"No","hasExpandedOption":"","hasQuantity":"","hasSpecialPricing":"","icon":"","images":"[\"https:\u002F\u002Fwww.jotform.com\u002Fuploads\u002Fugurg\u002Fform_files\u002Fsweatshirt.png\"]","isLowStockAlertEnabled":"No","isStockControlEnabled":"No","lowStockValue":"","name":"Sweatshirt","options":[],"order":"0","pid":"1000","price":"10","required":"","selected":"","showSubtotal":"0"},{"connectedCategories":"[]","connectedProducts":"[]","description":"Durably stitched surfaces, clean finishes and the perfect amount of shine to make you dazzle.","fitImageToCanvas":"No","hasExpandedOption":"","hasQuantity":"","hasSpecialPricing":"","icon":"","images":"[\"https:\u002F\u002Fwww.jotform.com\u002Fuploads\u002Fugurg\u002Fform_files\u002Fhoodie.png\"]","isLowStockAlertEnabled":"No","isStockControlEnabled":"No","lowStockValue":"","name":"Hoodie","options":[],"order":"1","pid":"1001","price":"10","required":"","selected":"","showSubtotal":"0"},{"connectedCategories":"[]","connectedProducts":"[]","description":"Made from soft cotton fabric, it gives you the feel of your favorite tee from the first use.","fitImageToCanvas":"No","hasExpandedOption":"","hasQuantity":"","hasSpecialPricing":"","icon":"","images":"[\"https:\u002F\u002Fwww.jotform.com\u002Fuploads\u002Fugurg\u002Fform_files\u002Ft-shirt.png\"]","isLowStockAlertEnabled":"No","isStockControlEnabled":"No","lowStockValue":"","name":"T-Shirt","options":[],"order":"2","pid":"1002","price":"10","required":"","selected":"","showSubtotal":"0"},{"connectedCategories":"[]","connectedProducts":"[]","description":"Durably stitched surfaces, clean finishes and the perfect amount of shine to make you dazzle.","fitImageToCanvas":"Yes","hasExpandedOption":"","hasQuantity":"1","hasSpecialPricing":"","icon":"","images":"[\"https:\u002F\u002Fwww.jotform.com\u002Fuploads\u002Fugurg\u002Fform_files\u002FBlack%20And%20Gray%20Abstract%20Shoes%20Promo%20Poster.png\"]","isLowStockAlertEnabled":"No","isProductOptionNew":"No","isStockControlEnabled":"No","lowStockValue":"","name":"Sports Shoes","options":[{"type":"quantity","properties":"1\n2\n3\n4\n5\n6\n7\n8\n9\n10","name":"Quantity","defaultQuantity":"","specialPricing":false,"specialPrices":"","expanded":false},{"type":"custom","name":"Shoe Size","properties":"8\n8.5\n9\n9.5\n10\n10.5\n11\n11.5\n12\n13\n14","defaultQuantity":"","specialPricing":false,"expanded":false,"specialPrices":"","specialPricingAllowed":true}],"order":"3","pid":"1004","price":"10","required":"","selected":"","showSubtotal":"0"},{"connectedCategories":"[]","connectedProducts":"[]","description":"You will wear it again and again, this shoe is remarkable and loyal just like you.","fitImageToCanvas":"Yes","hasExpandedOption":"","hasQuantity":"1","hasSpecialPricing":"","icon":"","images":"[\"https:\u002F\u002Fwww.jotform.com\u002Fuploads\u002Fugurg\u002Fform_files\u002FBlue%20Minimalist%20Shoes%20Product%20.png\"]","isLowStockAlertEnabled":"No","isStockControlEnabled":"No","lowStockValue":"","name":"Linen Shoes","options":[{"type":"quantity","properties":"1\n2\n3\n4\n5\n6\n7\n8\n9\n10","name":"Quantity","defaultQuantity":"","specialPricing":false,"specialPrices":"","expanded":false},{"type":"custom","name":"Shoe Size","properties":"8\n8.5\n9\n9.5\n10\n10.5\n11\n11.5\n12\n13\n14","defaultQuantity":"","specialPricing":false,"expanded":false,"specialPrices":"","specialPricingAllowed":true}],"order":"4","pid":"1005","price":"14","required":"0"},{"connectedCategories":"[]","connectedProducts":"[]","description":"This product is made from at least 50% recycled polyester fiber.","fitImageToCanvas":"Yes","hasExpandedOption":"","hasQuantity":"1","hasSpecialPricing":"","icon":"","images":"[\"https:\u002F\u002Fwww.jotform.com\u002Fuploads\u002Fugurg\u002Fform_files\u002FYellow%20white%20simple%20caps%20fashion%20promotion%20-%20instagram%20post.png\"]","isLowStockAlertEnabled":"No","isStockControlEnabled":"No","lowStockValue":"","name":"Cap","options":[{"type":"quantity","properties":"1\n2\n3\n4\n5\n6\n7\n8\n9\n10","name":"Quantity","defaultQuantity":"","specialPricing":false,"specialPrices":"","expanded":false},{"type":"custom","name":"Color","properties":"Red\nBlue\nGreen\nYellow\nMagenta","defaultQuantity":"","specialPricing":false,"expanded":false,"specialPrices":"","specialPricingAllowed":true}],"order":"5","pid":"1003","price":"10","required":"","selected":"","showSubtotal":"0"}]}}
+      JotForm.alterTexts(undefined);
+      JotForm.alterTexts({"couponApply":"Apply","couponBlank":"Please enter a coupon.","couponChange":"","couponEnter":"Enter coupon","couponExpired":"Coupon is expired. Please try another one.","couponInvalid":"Coupon is invalid.","couponValid":"Coupon is valid.","shippingShipping":"Shipping","taxTax":"Tax","totalSubtotal":"Subtotal","totalTotal":"Total"}, true);
+	/*INIT-END*/
+	});
+
+   JotForm.prepareCalculationsOnTheFly([null,null,{"name":"submit2","qid":"2","text":"Buy Now!","type":"control_button"},null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,{"description":"","name":"products","qid":"42","text":"Products","type":"control_paypalcomplete"},{"name":"paymentMethods","qid":"43","text":"Payment Methods","type":"control_paymentmethods"}]);
+   setTimeout(function() {
+JotForm.paymentExtrasOnTheFly([null,null,{"name":"submit2","qid":"2","text":"Buy Now!","type":"control_button"},null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,{"description":"","name":"products","qid":"42","text":"Products","type":"control_paypalcomplete"},{"name":"paymentMethods","qid":"43","text":"Payment Methods","type":"control_paymentmethods"}]);}, 20); 
+</script>
+<style type="text/css">@media print{.form-section{display:inline!important}.form-pagebreak{display:none!important}.form-section-closed{height:auto!important}.page-section{position:initial!important}}</style>
+<link type="text/css" rel="stylesheet" href="https://cdn01.jotfor.ms/themes/CSS/5e6b428acc8c4e222d1beb91.css?v=3.3.42766&themeRevisionID=63e6805f64383509e31513f4"/>
+<link type="text/css" rel="stylesheet" href="https://cdn02.jotfor.ms/css/styles/payment/payment_styles.css?3.3.42766" />
+<link type="text/css" rel="stylesheet" href="https://cdn03.jotfor.ms/css/styles/payment/payment_feature.css?3.3.42766" />
+    <title>CapyShop</title>
+    <link rel="stylesheet" href="shop.css">
+</head>
+<body>
+    <nav>
+       <a href="index.html" style="color: black;">
+        <div class="logo">
+            <img src="Logo-removebg-preview.png" alt="Your Logo">
+            <h3 style="float: right;">Capybara.ga</h3>
+          </div>
+       </a>
+        <ul>
+          <li><a href="#">Toys</a></li>
+          <li><a href="#">Books</a></li>
+          <li><a href="#">Beauty and health</a></li>
+          <li><a href="#">Home decoration</a></li>
+          <li><a href="#">Sports and travel</a></li>
+        </ul>
+      </nav>
+   
+
+      <form class="jotform-form" action="https://submit.jotform.com/submit/231644076882462" method="post" name="form_231644076882462" id="231644076882462" accept-charset="utf-8" autocomplete="on"><input type="hidden" name="formID" value="231644076882462" /><input type="hidden" id="JWTContainer" value="" /><input type="hidden" id="cardinalOrderNumber" value="" />
+        <div role="main" class="form-all">
+          <ul class="form-section page-section">
+            <li class="form-line card-3col" data-type="control_paypalcomplete" id="id_42" data-payment="true"><label class="form-label form-label-top" id="label_42" for="input_42"> Products </label>
+              <div id="cid_42" class="form-input-wide" data-layout="full">
+                <div data-wrapper-react="true">
+                  <div data-wrapper-react="true" class="product-container-wrapper">
+                    <div class="filter-container"></div><input type="hidden" name="simple_fpc" data-payment_type="paypalcomplete" data-component="payment1" value="42" /><input type="hidden" name="payment_transaction_uuid" id="paymentTransactionId" /><input type="hidden" name="payment_total_checksum" id="payment_total_checksum" data-component="payment2" />
+                    <div id="image-overlay" class="overlay-content" style="display:none"><img id="current-image" /><span class="lb-prev-button">prev</span><span class="lb-next-button">next</span><span class="lb-close-button">( X )</span><span class="image-overlay-product-container">
+                        <ul class="form-overlay-item" pid="1000" hasicon="false" hasimages="true" iconvalue="">
+                          <li class="image-overlay-image"><img loading="lazy" src="https://www.jotform.com/uploads/ugurg/form_files/sweatshirt.png" /></li>
+                        </ul>
+                        <ul class="form-overlay-item" pid="1001" hasicon="false" hasimages="true" iconvalue="">
+                          <li class="image-overlay-image"><img loading="lazy" src="https://www.jotform.com/uploads/ugurg/form_files/hoodie.png" /></li>
+                        </ul>
+                        <ul class="form-overlay-item" pid="1002" hasicon="false" hasimages="true" iconvalue="">
+                          <li class="image-overlay-image"><img loading="lazy" src="https://www.jotform.com/uploads/ugurg/form_files/t-shirt.png" /></li>
+                        </ul>
+                        <ul class="form-overlay-item" pid="1004" hasicon="false" hasimages="true" iconvalue="">
+                          <li class="image-overlay-image"><img loading="lazy" src="https://www.jotform.com/uploads/ugurg/form_files/Black%20And%20Gray%20Abstract%20Shoes%20Promo%20Poster.png" /></li>
+                        </ul>
+                        <ul class="form-overlay-item" pid="1005" hasicon="false" hasimages="true" iconvalue="">
+                          <li class="image-overlay-image"><img loading="lazy" src="https://www.jotform.com/uploads/ugurg/form_files/Blue%20Minimalist%20Shoes%20Product%20.png" /></li>
+                        </ul>
+                        <ul class="form-overlay-item" pid="1003" hasicon="false" hasimages="true" iconvalue="">
+                          <li class="image-overlay-image"><img loading="lazy" src="https://www.jotform.com/uploads/ugurg/form_files/Yellow%20white%20simple%20caps%20fashion%20promotion%20-%20instagram%20post.png" /></li>
+                        </ul>
+                      </span></div>
+                    <div data-wrapper-react="true"><span class="form-product-item hover-product-item on_col1 show_image show_desc full_img new_ui" categories="2001" active-category="2001" pid="1000" aria-labelledby="label_42">
+                        <div data-wrapper-react="true" class="form-product-item-detail new_ui">
+                          <div class="p_col">
+                            <div class="p_checkbox"><input type="checkbox" class="form-checkbox  form-product-input" id="input_42_1000" name="q42_products[][id]" value="1000" aria-label="Select Product: Sweatshirt" />
+                              <div class="checked"></div>
+                              <div class="select_border"></div>
+                            </div>
+                          </div>
+                          <div class="p_image">
+                            <div class="image_area form-product-image-with-options">
+                              <div style="position:absolute;width:100%;height:100%"><img role="img" aria-label="Sweatshirt" alt="Sweatshirt Product Image" style="width:100%;height:100%;object-fit:contain" src="https://www.jotform.com/uploads/ugurg/form_files/sweatshirt.png" loading="lazy" /></div>
+                              <div class="image_zoom"></div>
+                            </div>
+                          </div>
+                          <div for="input_42_1000" class="form-product-container"><span data-wrapper-react="true">
+                              <div class="title_description"><span class="form-product-name" id="product-name-input_42_1000">Sweatshirt</span><span class="form-product-description" id="product-name-description-input_42_1000">This style you&#x27;ll want to wear every day is comfortable and durable for everyday use.</span></div><span class="form-product-details"><b><span data-wrapper-react="true">$<span id="input_42_1000_price">10.00</span></span></b></span>
+                            </span></div>
+                          <div class="focus_action_button_container"><a class="btn-inline-product-delete"> </a><a class="btn-inline-product-settings"> </a></div>
+                        </div>
+                      </span>
+                      <div class="p_item_separator "></div><span class="form-product-item hover-product-item on_col2 show_image show_desc full_img new_ui" categories="non-categorized" pid="1001" aria-labelledby="label_42">
+                        <div data-wrapper-react="true" class="form-product-item-detail new_ui">
+                          <div class="p_col">
+                            <div class="p_checkbox"><input type="checkbox" class="form-checkbox  form-product-input" id="input_42_1001" name="q42_products[][id]" value="1001" aria-label="Select Product: Hoodie" />
+                              <div class="checked"></div>
+                              <div class="select_border"></div>
+                            </div>
+                          </div>
+                          <div class="p_image">
+                            <div class="image_area form-product-image-with-options">
+                              <div style="position:absolute;width:100%;height:100%"><img role="img" aria-label="Hoodie" alt="Hoodie Product Image" style="width:100%;height:100%;object-fit:contain" src="https://www.jotform.com/uploads/ugurg/form_files/hoodie.png" loading="lazy" /></div>
+                              <div class="image_zoom"></div>
+                            </div>
+                          </div>
+                          <div for="input_42_1001" class="form-product-container"><span data-wrapper-react="true">
+                              <div class="title_description"><span class="form-product-name" id="product-name-input_42_1001">Hoodie</span><span class="form-product-description" id="product-name-description-input_42_1001">Durably stitched surfaces, clean finishes and the perfect amount of shine to make you dazzle.</span></div><span class="form-product-details"><b><span data-wrapper-react="true">$<span id="input_42_1001_price">10.00</span></span></b></span>
+                            </span></div>
+                          <div class="focus_action_button_container"><a class="btn-inline-product-delete"> </a><a class="btn-inline-product-settings"> </a></div>
+                        </div>
+                      </span>
+                      <div class="p_item_separator "></div><span class="form-product-item hover-product-item on_col3 show_image show_desc full_img new_ui" categories="non-categorized" pid="1002" aria-labelledby="label_42">
+                        <div data-wrapper-react="true" class="form-product-item-detail new_ui">
+                          <div class="p_col">
+                            <div class="p_checkbox"><input type="checkbox" class="form-checkbox  form-product-input" id="input_42_1002" name="q42_products[][id]" value="1002" aria-label="Select Product: T-Shirt" />
+                              <div class="checked"></div>
+                              <div class="select_border"></div>
+                            </div>
+                          </div>
+                          <div class="p_image">
+                            <div class="image_area form-product-image-with-options">
+                              <div style="position:absolute;width:100%;height:100%"><img role="img" aria-label="T-Shirt" alt="T-Shirt Product Image" style="width:100%;height:100%;object-fit:contain" src="https://www.jotform.com/uploads/ugurg/form_files/t-shirt.png" loading="lazy" /></div>
+                              <div class="image_zoom"></div>
+                            </div>
+                          </div>
+                          <div for="input_42_1002" class="form-product-container"><span data-wrapper-react="true">
+                              <div class="title_description"><span class="form-product-name" id="product-name-input_42_1002">T-Shirt</span><span class="form-product-description" id="product-name-description-input_42_1002">Made from soft cotton fabric, it gives you the feel of your favorite tee from the first use.</span></div><span class="form-product-details"><b><span data-wrapper-react="true">$<span id="input_42_1002_price">10.00</span></span></b></span>
+                            </span></div>
+                          <div class="focus_action_button_container"><a class="btn-inline-product-delete"> </a><a class="btn-inline-product-settings"> </a></div>
+                        </div>
+                      </span>
+                      <div class="p_item_separator "></div><span class="form-product-item hover-product-item on_col1 show_image show_desc show_option new_ui" categories="non-categorized" pid="1004" aria-labelledby="label_42">
+                        <div data-wrapper-react="true" class="form-product-item-detail new_ui">
+                          <div class="p_col">
+                            <div class="p_checkbox"><input type="checkbox" class="form-checkbox  form-product-input" id="input_42_1004" name="q42_products[][id]" value="1004" aria-label="Select Product: Sports Shoes" />
+                              <div class="checked"></div>
+                              <div class="select_border"></div>
+                            </div>
+                          </div>
+                          <div class="p_image">
+                            <div class="image_area form-product-image-with-options">
+                              <div style="position:absolute;width:100%;height:100%"><img role="img" aria-label="Sports Shoes" alt="Sports Shoes Product Image" style="width:100%;height:100%;object-fit:cover" src="https://www.jotform.com/uploads/ugurg/form_files/Black%2520And%2520Gray%2520Abstract%2520Shoes%2520Promo%2520Poster.png" loading="lazy" /></div>
+                              <div class="image_zoom"></div>
+                            </div>
+                          </div>
+                          <div for="input_42_1004" class="form-product-container"><span data-wrapper-react="true">
+                              <div class="title_description"><span class="form-product-name" id="product-name-input_42_1004">Sports Shoes</span><span class="form-product-description" id="product-name-description-input_42_1004">Durably stitched surfaces, clean finishes and the perfect amount of shine to make you dazzle.</span></div><span class="form-product-details"><b><span data-wrapper-react="true">$<span id="input_42_1004_price">10.00</span></span></b></span>
+                            </span><span class="form-sub-label-container" style="vertical-align:top"><label class="form-sub-label" for="input_42_quantity_1004_0" style="min-height:13px" aria-hidden="false">Quantity</label><span class="select_cont"><select class="form-dropdown" name="q42_products[special_1004][item_0]" id="input_42_quantity_1004_0" aria-label="Select Quantity">
+                                  <option value="1">1</option>
+                                  <option value="2">2</option>
+                                  <option value="3">3</option>
+                                  <option value="4">4</option>
+                                  <option value="5">5</option>
+                                  <option value="6">6</option>
+                                  <option value="7">7</option>
+                                  <option value="8">8</option>
+                                  <option value="9">9</option>
+                                  <option value="10">10</option>
+                                </select></span></span><span class="form-sub-label-container" style="vertical-align:top"><label class="form-sub-label" for="input_42_custom_1004_1" style="min-height:13px" aria-hidden="false">Shoe Size</label><span class="select_cont"><select class="form-dropdown" name="q42_products[special_1004][item_1]" id="input_42_custom_1004_1" aria-label="Select Shoe Size">
+                                  <option value="8">8</option>
+                                  <option value="8.5">8.5</option>
+                                  <option value="9">9</option>
+                                  <option value="9.5">9.5</option>
+                                  <option value="10">10</option>
+                                  <option value="10.5">10.5</option>
+                                  <option value="11">11</option>
+                                  <option value="11.5">11.5</option>
+                                  <option value="12">12</option>
+                                  <option value="13">13</option>
+                                  <option value="14">14</option>
+                                </select></span></span></div>
+                          <div class="focus_action_button_container"><a class="btn-inline-product-delete"> </a><a class="btn-inline-product-settings"> </a></div>
+                        </div>
+                      </span>
+                      <div class="p_item_separator "></div><span class="form-product-item hover-product-item on_col2 show_image show_desc show_option new_ui" categories="non-categorized" pid="1005" aria-labelledby="label_42">
+                        <div data-wrapper-react="true" class="form-product-item-detail new_ui">
+                          <div class="p_col">
+                            <div class="p_checkbox"><input type="checkbox" class="form-checkbox  form-product-input" id="input_42_1005" name="q42_products[][id]" value="1005" aria-label="Select Product: Linen Shoes" />
+                              <div class="checked"></div>
+                              <div class="select_border"></div>
+                            </div>
+                          </div>
+                          <div class="p_image">
+                            <div class="image_area form-product-image-with-options">
+                              <div style="position:absolute;width:100%;height:100%"><img role="img" aria-label="Linen Shoes" alt="Linen Shoes Product Image" style="width:100%;height:100%;object-fit:cover" src="https://www.jotform.com/uploads/ugurg/form_files/Blue%2520Minimalist%2520Shoes%2520Product%2520.png" loading="lazy" /></div>
+                              <div class="image_zoom"></div>
+                            </div>
+                          </div>
+                          <div for="input_42_1005" class="form-product-container"><span data-wrapper-react="true">
+                              <div class="title_description"><span class="form-product-name" id="product-name-input_42_1005">Linen Shoes</span><span class="form-product-description" id="product-name-description-input_42_1005">You will wear it again and again, this shoe is remarkable and loyal just like you.</span></div><span class="form-product-details"><b><span data-wrapper-react="true">$<span id="input_42_1005_price">14.00</span></span></b></span>
+                            </span><span class="form-sub-label-container" style="vertical-align:top"><label class="form-sub-label" for="input_42_quantity_1005_0" style="min-height:13px" aria-hidden="false">Quantity</label><span class="select_cont"><select class="form-dropdown" name="q42_products[special_1005][item_0]" id="input_42_quantity_1005_0" aria-label="Select Quantity">
+                                  <option value="1">1</option>
+                                  <option value="2">2</option>
+                                  <option value="3">3</option>
+                                  <option value="4">4</option>
+                                  <option value="5">5</option>
+                                  <option value="6">6</option>
+                                  <option value="7">7</option>
+                                  <option value="8">8</option>
+                                  <option value="9">9</option>
+                                  <option value="10">10</option>
+                                </select></span></span><span class="form-sub-label-container" style="vertical-align:top"><label class="form-sub-label" for="input_42_custom_1005_1" style="min-height:13px" aria-hidden="false">Shoe Size</label><span class="select_cont"><select class="form-dropdown" name="q42_products[special_1005][item_1]" id="input_42_custom_1005_1" aria-label="Select Shoe Size">
+                                  <option value="8">8</option>
+                                  <option value="8.5">8.5</option>
+                                  <option value="9">9</option>
+                                  <option value="9.5">9.5</option>
+                                  <option value="10">10</option>
+                                  <option value="10.5">10.5</option>
+                                  <option value="11">11</option>
+                                  <option value="11.5">11.5</option>
+                                  <option value="12">12</option>
+                                  <option value="13">13</option>
+                                  <option value="14">14</option>
+                                </select></span></span></div>
+                          <div class="focus_action_button_container"><a class="btn-inline-product-delete"> </a><a class="btn-inline-product-settings"> </a></div>
+                        </div>
+                      </span>
+                      <div class="p_item_separator "></div><span class="form-product-item hover-product-item on_col3 show_image show_desc show_option new_ui" categories="non-categorized" pid="1003" aria-labelledby="label_42">
+                        <div data-wrapper-react="true" class="form-product-item-detail new_ui">
+                          <div class="p_col">
+                            <div class="p_checkbox"><input type="checkbox" class="form-checkbox  form-product-input" id="input_42_1003" name="q42_products[][id]" value="1003" aria-label="Select Product: Cap" />
+                              <div class="checked"></div>
+                              <div class="select_border"></div>
+                            </div>
+                          </div>
+                          <div class="p_image">
+                            <div class="image_area form-product-image-with-options">
+                              <div style="position:absolute;width:100%;height:100%"><img role="img" aria-label="Cap" alt="Cap Product Image" style="width:100%;height:100%;object-fit:cover" src="https://www.jotform.com/uploads/ugurg/form_files/Yellow%2520white%2520simple%2520caps%2520fashion%2520promotion%2520-%2520instagram%2520post.png" loading="lazy" /></div>
+                              <div class="image_zoom"></div>
+                            </div>
+                          </div>
+                          <div for="input_42_1003" class="form-product-container"><span data-wrapper-react="true">
+                              <div class="title_description"><span class="form-product-name" id="product-name-input_42_1003">Cap</span><span class="form-product-description" id="product-name-description-input_42_1003">This product is made from at least 50% recycled polyester fiber.</span></div><span class="form-product-details"><b><span data-wrapper-react="true">$<span id="input_42_1003_price">10.00</span></span></b></span>
+                            </span><span class="form-sub-label-container" style="vertical-align:top"><label class="form-sub-label" for="input_42_quantity_1003_0" style="min-height:13px" aria-hidden="false">Quantity</label><span class="select_cont"><select class="form-dropdown" name="q42_products[special_1003][item_0]" id="input_42_quantity_1003_0" aria-label="Select Quantity">
+                                  <option value="1">1</option>
+                                  <option value="2">2</option>
+                                  <option value="3">3</option>
+                                  <option value="4">4</option>
+                                  <option value="5">5</option>
+                                  <option value="6">6</option>
+                                  <option value="7">7</option>
+                                  <option value="8">8</option>
+                                  <option value="9">9</option>
+                                  <option value="10">10</option>
+                                </select></span></span><span class="form-sub-label-container" style="vertical-align:top"><label class="form-sub-label" for="input_42_custom_1003_1" style="min-height:13px" aria-hidden="false">Color</label><span class="select_cont"><select class="form-dropdown" name="q42_products[special_1003][item_1]" id="input_42_custom_1003_1" aria-label="Select Color">
+                                  <option value="Red">Red</option>
+                                  <option value="Blue">Blue</option>
+                                  <option value="Green">Green</option>
+                                  <option value="Yellow">Yellow</option>
+                                  <option value="Magenta">Magenta</option>
+                                </select></span></span></div>
+                          <div class="focus_action_button_container"><a class="btn-inline-product-delete"> </a><a class="btn-inline-product-settings"> </a></div>
+                        </div>
+                      </span>
+                      <div class="payment_footer new_ui ">
+                        <div class="total_area">
+                          <div class="form-payment-total">
+                            <div id="total-text">Total</div>
+                            <div class="form-payment-price"><span data-wrapper-react="true">$<span id="payment_total">0.00</span></span></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="form-line" data-type="control_paymentmethods" id="id_43"><label class="form-label form-label-top" id="label_43" for="input_43"> Payment Methods </label>
+              <div id="cid_43" class="form-input-wide" data-layout="full">
+                <div class="payment-methods-area">
+                  <div data-wrapper-react="true" class="paypalcomplete-payment-wrapper" data-sandbox="disabled" data-currency="USD" data-merchantid="" data-auth-only="No" data-show-spb="true" data-show-card-fields="true">
+                    <div id="paypal-commerce-platform-container">
+                      <div class="paypal-toggle-buttons">
+                        <div class="paypal-toggle">
+                          <div id="paypal-card-fields">
+                            <div class="payment-method-container" data-id="paypal-card-fields"><input type="radio" class="form-radio" name="paypal-payment-method" data-id="paypal-card-fields" id="paypal-card-fields-input" aria-describedby="label_43" /><label for="paypal-card-fields-input"><span class="CC_ico"></span>Debit or Credit Card</label></div>
+                          </div>
+                          <div id="paypal-smart-buttons">
+                            <div class="payment-method-container" data-id="paypal-smart-buttons"><input type="radio" class="form-radio" name="paypal-payment-method" data-id="paypal-smart-buttons" id="paypal-smart-buttons-input" aria-label="Paypal" aria-describedby="label_43" /><label for="paypal-smart-buttons-input" aria-hidden="true"></label></div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="paypal-toggle-content " render-paypal-type="">
+                        <div class="content-area">
+                          <div id="paypal-credit-card-fields">
+                            <div class="paypal-commerce-platform">
+                              <div class="paypal-content">
+                                <table class="form-address-table payment-form-table" style="border:0" cellPadding="0" cellSpacing="0">
+                                  <tbody>
+                                    <tr>
+                                      <td width="50%"><span class="form-sub-label-container" style="vertical-align:top"><input type="text" id="42_cc_firstName" name="q42_products[cc_firstName]" class="form-textbox cc_firstName" data-defaultvalue="" size="20" value="" data-component="cc_firstName" aria-label="First Name" /><label class="form-sub-label" for="42_cc_firstName" id="sublabel_cc_firstName" style="min-height:13px;margin:0 0 3px 0" aria-hidden="false">First Name</label></span></td>
+                                      <td width="50%"><span class="form-sub-label-container" style="vertical-align:top"><input type="text" id="42_cc_lastName" name="q42_products[cc_lastName]" class="form-textbox cc_lastName" data-defaultvalue="" size="20" value="" data-component="cc_lastName" aria-label="Last Name" /><label class="form-sub-label" for="42_cc_lastName" id="sublabel_cc_lastName" style="min-height:13px;margin:0 0 3px 0" aria-hidden="false">Last Name</label></span></td>
+                                    </tr>
+                                    <tr class="if_cc_field">
+                                      <td width="50%"><span class="form-sub-label-container" style="vertical-align:top">
+                                          <div class="form-textbox cc_numberMount cc_number"></div><label class="form-sub-label" for="42_cc_number" id="sublabel_cc_number" style="min-height:13px;margin:0 0 3px 0" aria-hidden="false">Credit Card Number</label>
+                                        </span></td>
+                                      <td width="50%"><span class="form-sub-label-container" style="vertical-align:top">
+                                          <div class="form-textbox cc_ccvMount cc_ccv"></div><label class="form-sub-label" for="42_cc_ccv" id="sublabel_cc_ccv" style="min-height:13px;margin:0 0 3px 0" aria-hidden="false">Security Code</label>
+                                        </span></td>
+                                    </tr>
+                                    <tr>
+                                      <td width="50%"><span class="form-sub-label-container" style="vertical-align:top">
+                                          <div class="form-textbox cc_cardExpiryMount cc_card_expiry"></div><label class="form-sub-label" for="42_cc_card_expiry" id="sublabel_cc_card_expiry" style="min-height:13px;margin:0 0 3px 0" aria-hidden="false">Card Expiration</label>
+                                        </span></td>
+                                      <td width="50%">
+                                    <tr style="display:none">
+                                      <td><input id="paypal_complete_dummy" style="display:none" /></td>
+                                    </tr>
+                                    </td>
+                                    </tr>
+                                    <div id="payments-sdk__contingency-lightbox"></div>
+                                  </tbody>
+                                </table>
+                              </div>
+                            </div>
+                          </div>
+                          <div id="paypal-spb-area">
+                            <p>Please click one of the PayPal options to complete payment and <b>submit</b> the form.</p>
+                            <div id="paypal-button-container"></div>
+                          </div>
+                        </div>
+                        <div class="paypal-paylater-messages" style="display:block;padding-top:12px">
+                          <div class="message-area"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div><input type="hidden" id="input_43_payment_method" name="q43_paymentMethods[payment_method]" class="" data-defaultvalue="" value="" data-component="payment_method" />
+                </div>
+              </div>
+            </li>
+            <li class="form-line" data-type="control_button" id="id_2">
+              <div id="cid_2" class="form-input-wide" data-layout="full">
+                <div data-align="auto" class="form-buttons-wrapper form-buttons-auto   jsTest-button-wrapperField"><button id="input_2" type="submit" class="form-submit-button submit-button jf-form-buttons jsTest-submitField" data-component="button" data-content="">Buy Now!</button></div>
+              </div>
+            </li>
+            <li style="display:none">Should be Empty: <input type="text" name="website" value="" /></li>
+          </ul>
+        </div>
+        <script>
+          JotForm.showJotFormPowered = "new_footer";
+        </script>
+        <script>
+          JotForm.poweredByText = "Powered by Jotform";
+        </script><input type="hidden" class="simple_spc" id="simple_spc" name="simple_spc" value="231644076882462" />
+        <script type="text/javascript">
+          var all_spc = document.querySelectorAll("form[id='231644076882462'] .si" + "mple" + "_spc");
+          for (var i = 0; i < all_spc.length; i++)
+          {
+            all_spc[i].value = "231644076882462-231644076882462";
+          }
+        </script>
+      
+      </form><script type="text/javascript">JotForm.ownerView=true;</script><script src="https://cdn.jotfor.ms//js/vendor/smoothscroll.min.js?v=3.3.42766"></script>
+      <script src="https://cdn.jotfor.ms//js/errorNavigation.js?v=3.3.42766"></script>
+          <section id="footer">
+            <div class="footer-links">
+              <a href="aboutus.html">About us</a>
+              <a href="FAQ.html">FAQ</a>
+              <a href="contactus.html">Contact Us</a>
+              <a href="#">Blog</a>
+            </div>
+           <br>
+           <br>
+            <p>&copy; 2023 CapyBara. All rights reserved.</p>
+          </section>
+          
+   <script>
+    // Set card heights to be equal
+const cards = document.querySelectorAll('.card');
+
+let tallestCard = 0;
+cards.forEach(card => {
+  if (card.offsetHeight > tallestCard) {
+    tallestCard = card.offsetHeight;
+  }
+});
+
+cards.forEach(card => {
+  card.style.height = tallestCard + 'px';
+});
+
+// Adjust card width on window resize
+function adjustCardWidth() {
+  const containerWidth = document.querySelector('.container').offsetWidth;
+  let cardWidth = containerWidth / 4 - 20;
+  if (cardWidth < 220) {
+    cardWidth = containerWidth / 3 - 20;
+  }
+  if (cardWidth < 160) {
+    cardWidth = containerWidth / 2 - 20;
+  }
+  cards.forEach(card => {
+    card.style.width = cardWidth + 'px';
+  });
+}
+
+window.addEventListener('resize', adjustCardWidth);
+adjustCardWidth();
+
+   </script>
+</body>
+</html>
